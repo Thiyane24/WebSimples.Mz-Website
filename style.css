@@ -1,8 +1,8 @@
  :root {
       --primary: #2563EB;       /* Azul confiável */
       --primary-light: #3B82F6; /* Azul mais claro */
-      --accent: #F59E0B;       /* Laranja vibrante */
-      --accent-dark: #D97706;   /* Laranja escuro */
+      --accent: #f09307;       /* Laranja vibrante */
+      --accent-dark: #a57610;   /* Laranja escuro */
       --dark: #1F2937;         /* Preto suave */
       --light: #F9FAFB;        /* Branco neutro */
       --gray: #E5E7EB;        /* Cinza claro */
@@ -70,7 +70,7 @@
     .cta-button:hover, .nav-cta:hover {
       background-color: var(--accent-dark);
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+      box-shadow: 0 4px 12px rgba(129, 86, 6, 0.3);
     }
 
     /* Header */
@@ -378,13 +378,13 @@
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   }
   
-  .pricing-card.featured {
+  .pricing-card{
     border: 2px solid #2563EB;
   }
   
   .ribbon {
     position: absolute;
-    top: 10px;
+    top: 15px;
     right: -10px;
     background: #2563EB;
     color: white;
