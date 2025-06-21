@@ -60,7 +60,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 📬 Contact
 
-Thiyane - [@websimples.mz](https://instagram.com/websimples.mz) - contact@websimples.mz
+Thiyane - [@websimples.mz](https://instagram.com/websimples.mz) -  thiyane97@gmail.com - +258 872622721
 
 Project Link: [https://github.com/Thiyane24/WebSimples.Mz-Website](https://github.com/Thiyane24/WebSimples.Mz-Website)
 ```
@@ -125,7 +125,7 @@ Distribuído sob licença MIT. Veja `LICENSE` para mais informações.
 
 ## 📬 Contato
 
-Thiyane - [@websimples.mz](https://instagram.com/websimples.mz) - contacto@websimples.mz
+Thiyane - [@websimples.mz](https://instagram.com/websimples.mz) - thiyane97@gmail.com - +258 872622721
 
 Link do Projeto: [https://github.com/Thiyane24/WebSimples.Mz-Website](https://github.com/Thiyane24/WebSimples.Mz-Website)
 ```
