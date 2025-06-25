@@ -330,6 +330,7 @@
       .hero p {
         margin-left: auto;
         margin-right: auto;
+
       }
 
       .features-grid, .portfolio-grid {
@@ -528,3 +529,79 @@
         .section-title{
           margin-top: 5vh;
         }
+        .logo img {
+  height: 48px; /* Slightly larger for better visibility */
+  width: auto; /* Maintain aspect ratio */
+  max-width: 120px; /* Prevent excessive width */
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth transition */
+  object-fit: contain; /* Ensure logo maintains proportions */
+}
+
+.logo:hover img {
+  transform: scale(1.08); /* Subtle hover effect */
+  opacity: 0.9; /* Slight transparency on hover */
+  filter: brightness(1.05); /* Slight lightening effect */
+}
+
+/* ===== HERO SECTION ===== */
+.hero .container {
+  position: relative;
+  z-index: 2;
+  padding: 40px 0; /* Added padding for better spacing */
+}
+
+.hero {
+  background: linear-gradient(135deg, rgba(33, 70, 107, 0.9) 0%, rgba(10, 54, 83, 0.9) 100%), 
+              ;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Dark overlay for better text contrast */
+  z-index: 1;
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 992px) {
+  .hero {
+    padding: 100px 0;
+  }
+  
+  .hero .container {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo img {
+    height: 36px; /* Slightly reduced mobile size */
+  }
+  
+  .hero {
+    padding: 80px 20px;
+    background-position: 60% center; /* Adjust background for mobile */
+  }
+  
+  .hero h1 {
+    font-size: 2rem; /* Larger mobile font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    height: 32px; /* Final mobile size */
+  }
+  
+  .hero {
+    padding: 60px 15px;
+  }
+}

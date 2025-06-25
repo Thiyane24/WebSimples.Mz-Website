@@ -4,42 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Landing pages profissionais para negócios moçambicanos - sites rápidos e que convertem visitantes em clientes">
+   <!-- Segurança Reforçada -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; connect-src 'self' https://wa.me">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  
+  <!-- Pré-carregamento Otimizado -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" as="style">
+    <!-- Recursos Externos com SRI -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+        crossorigin="anonymous">
+  
   <title>WebSimples.mz</title>
   <link rel="icon" type="image/png" href="Copilot_20250623_164511.webp" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" as="style">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 <style>
  /* Improved Logo Styles */
-    .logo img {
-      height: 40px; /* Fixed height for consistency */
-      width: 90px;
-      transition: transform 0.3s ease;
-    }
-    
-    .logo:hover img {
-      transform: scale(1.05);
-    }
-    
-    /* Hero Section with Image */
-  
-    .hero .container {
-      position: relative;
-      z-index: 2;
-    }
-    
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .logo img {
-        height: 30px;
-      }
-      
-      .hero {
-        padding: 80px 20px;
-      }
-    }
+   /* ===== LOGO STYLES ===== */
+
     
     </style>
 </head>
@@ -261,104 +248,92 @@
   </a>
 
   <script>
-    // Mobile Menu Toggle
-    document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
-      const mobileMenu = document.querySelector('.mobile-menu');
-      mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+    'use strict';
+    
+    // Menu Mobile
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuToggle.addEventListener('click', () => {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !isExpanded);
+      mobileMenu.hidden = isExpanded;
+      
+      // Ícone dinâmico
+      menuToggle.innerHTML = isExpanded 
+        ? '<i class="fas fa-bars"></i>' 
+        : '<i class="fas fa-times"></i>';
     });
-
-    // Smooth scrolling for anchor links
+    
+    // Scroll Suave
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const targetId = this.getAttribute('href');
+        const target = document.querySelector(targetId);
+        
         if (target) {
-          // Close mobile menu if open
-          const mobileMenu = document.querySelector('.mobile-menu');
-          if (mobileMenu.style.display === 'block') {
-            mobileMenu.style.display = 'none';
+          // Fechar menu mobile se aberto
+          if (menuToggle.getAttribute('aria-expanded') === 'true') {
+            menuToggle.click();
           }
           
           target.scrollIntoView({
             behavior: 'smooth'
           });
+          
+          // Atualizar URL sem recarregar a página
+          history.pushState(null, null, targetId);
         }
       });
     });
-
-     document.getElementById('whatsapp-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Validação dos Campos
-            const name = document.getElementById('name');
-            const email = document.getElementById('email');
-            const message = document.getElementById('message');
-            let isValid = true;
-            
-            // Validar Nome
-            if (!name.checkValidity()) {
-                name.classList.add('error');
-                name.nextElementSibling.style.display = 'block';
-                isValid = false;
-            } else {
-                name.classList.remove('error');
-                name.nextElementSibling.style.display = 'none';
-            }
-            
-            // Validar Email
-            if (!email.checkValidity()) {
-                email.classList.add('error');
-                email.nextElementSibling.style.display = 'block';
-                isValid = false;
-            } else {
-                email.classList.remove('error');
-                email.nextElementSibling.style.display = 'none';
-            }
-            
-            // Validar Mensagem
-            if (!message.checkValidity()) {
-                message.classList.add('error');
-                message.nextElementSibling.style.display = 'block';
-                isValid = false;
-            } else {
-                message.classList.remove('error');
-                message.nextElementSibling.style.display = 'none';
-            }
-            
-            // Se válido, enviar para WhatsApp
-            if (isValid) {
-                const phoneNumber = "+258872622721"; // Substitua pelo seu nº
-                const text = `*Mensagem de Contacto de WebSimples*%0A%0A` +
-                             `*Nome:* ${encodeURIComponent(name.value)}%0A` +
-                             `*Email:* ${encodeURIComponent(email.value)}%0A` +
-                             `*Mensagem:* ${encodeURIComponent(message.value)}`;
-                
-                window.open(`https://wa.me/${phoneNumber}?text=${text}`, '_blank');
-                
-                // Limpar o formulário
-                this.reset();
-            }
-        });
+    
+    // Formulário de Contacto
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
         
-        // Proteção contra SPAM/Bots (Campos Ocultos)
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('whatsapp-form');
-            
-            // Adicionar campo honeypot (armadilha para bots)
-            const honeypot = document.createElement('input');
-            honeypot.type = 'text';
-            honeypot.name = 'honeypot';
-            honeypot.style.display = 'none';
-            form.appendChild(honeypot);
-            
-            // Validar se o honeypot foi preenchido (sinal de bot)
-            form.addEventListener('submit', function(e) {
-                if (honeypot.value) {
-                    e.preventDefault();
-                    console.log("Bot detectado!");
-                }
-            });
-        }); 
+        // Validação
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+        
+        if (!name || !email || !message) {
+          alert('Por favor, preencha todos os campos.');
+          return;
+        }
+        
+        // Enviar para WhatsApp
+        const whatsappUrl = `https://wa.me/258872622721?text=${encodeURIComponent(
+          `*Nova Mensagem de Contacto*\n\n` +
+          `*Nome:* ${name}\n` +
+          `*Email:* ${email}\n` +
+          `*Mensagem:* ${message}`
+        )}`;
+        
+        window.open(whatsappUrl, '_blank');
+        this.reset();
+      });
+    }
+    
+    // Observador de Intersecção para Animações
+    const observerOptions = {
+      threshold: 0.1
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, observerOptions);
+    
+    // Observar elementos que devem ser animados
+    document.querySelectorAll('.pricing-card, .portfolio-item').forEach(el => {
+      observer.observe(el);
+    });
   </script>
 </body>
 </html>
