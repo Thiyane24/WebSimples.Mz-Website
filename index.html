@@ -1,360 +1,336 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-pt" class="scroll-smooth">
 <head>
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https: data:; img-src 'self' data: https:; font-src 'self' https: data:;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    
+    <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebSimples.mz - Seu Negócio Online em 72 Horas</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Portuguese">
+    <meta name="author" content="WebSimples.mz">
+    
+    <!-- SEO Meta Tags -->
+    <title>WebSimples.mz | Desenvolvimento Web Moçambique</title>
+    <meta name="description" content="Criamos websites profissionais para pequenos negócios em Moçambique em apenas 72 horas. Design responsivo, integração WhatsApp, hospedagem incluída. Preços a partir de 9.000 MT.">
+    <meta name="keywords" content="website moçambique, desenvolvimento web, design responsivo, negócios online, WhatsApp Business, hospedagem web, SEO Moçambique">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://websimples.mz/">
+    <meta property="og:title" content="WebSimples.mz - Websites Profissionais em 72 Horas">
+    <meta property="og:description" content="Criamos websites profissionais para pequenos negócios em Moçambique em apenas 72 horas. Design responsivo, integração WhatsApp, hospedagem incluída.">
+    <meta property="og:image" content="https://websimples.mz/og-image.jpg">
+    <meta property="og:locale" content="pt_BR">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://websimples.mz/">
+    <meta property="twitter:title" content="WebSimples.mz - Websites Profissionais em 72 Horas">
+    <meta property="twitter:description" content="Criamos websites profissionais para pequenos negócios em Moçambique em apenas 72 horas.">
+    <meta property="twitter:image" content="https://websimples.mz/twitter-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="" href="Copilot_20250623_173331.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="Copilot_20250623_173331.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Copilot_20250623_173331.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Copilot_20250623_173331.png">
+    <link rel="manifest" href="Copilot_20250623_173331.png">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Stylesheets -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "WebSimples.mz",
+        "url": "https://websimples.mz",
+        "logo": "https://websimples.mz/logo.png",
+        "description": "Desenvolvimento de websites profissionais para pequenos negócios em Moçambique",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "MZ"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+258872622721",
+            "contactType": "customer service",
+            "availableLanguage": ["Portuguese", "English"]
+        },
+        "sameAs": [
+            "https://wa.me/25872622721"
+        ]
+    }
+    </script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#1e293b',        // Slate 800 - Professional dark
+                        'secondary': '#0f172a',      // Slate 900 - Deep professional
+                        'accent': '#3b82f6',         // Blue 500 - Modern blue
+                        'success': '#10b981',        // Emerald 500 - Success green
+                        'warning': '#f59e0b',        // Amber 500 - Warning amber
+                        'danger': '#ef4444',         // Red 500 - Error red
+                        'neutral': '#64748b',        // Slate 500 - Neutral gray
+                        'light': '#f8fafc',          // Slate 50 - Light background
+                        'dark': '#020617',           // Slate 950 - Deep dark
+                        'gray-50': '#f8fafc',
+                        'gray-100': '#f1f5f9',
+                        'gray-200': '#e2e8f0',
+                        'gray-300': '#cbd5e1',
+                        'gray-400': '#94a3b8',
+                        'gray-500': '#64748b',
+                        'gray-600': '#475569',
+                        'gray-700': '#334155',
+                        'gray-800': '#1e293b',
+                        'gray-900': '#0f172a'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'scale-in': 'scaleIn 0.5s ease-out',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'gradient': 'gradient 8s ease infinite'
+                    },
+                    backgroundSize: {
+                        '300%': '300%'
+                    }
+                }
+            }
+        }
+    </script>
+    
     <style>
-        :root {
-            --primary-color: #2c5aa0;
-            --secondary-color: #e8f1ff;
-            --accent-color: #ff6b35;
-            --success-color: #27ae60;
-            --dark-color: #2c3e50;
-            --light-gray: #f8f9fa;
-            --text-color: #333;
+        /* Custom Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        @keyframes glow {
+            from { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+            to { box-shadow: 0 0 30px rgba(59, 130, 246, 0.5), 0 0 40px rgba(59, 130, 246, 0.3); }
         }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
-        .hero-section {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #1e3c72 100%);
-            color: white;
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,0 1000,300 1000,1000 0,700"/></svg>');
-            background-size: cover;
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
         }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        
+        /* Professional Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6, #1e40af, #1e293b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 300% 300%;
+            animation: gradient 8s ease infinite;
         }
-
-        .hero-subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+        
+        /* Modern Grid Background */
+        .tech-grid {
+            background-image: 
+                linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
         }
-
-        .cta-button {
-            background: var(--accent-color);
-            color: white;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
+        
+        /* Glass Effect - More Subtle */
+        .glass {
+            background: rgba(248, 250, 252, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(248, 250, 252, 0.1);
+        }
+        
+        /* Professional Card Hover */
+        .hover-lift {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hover-lift:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Modern Button Styles */
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
         }
-
-        .cta-button:hover {
-            background: #e55a2b;
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+        }
+        
+        .btn-outline {
+            border: 2px solid #3b82f6;
+            color: #3b82f6;
+            transition: all 0.3s ease;
+        }
+        .btn-outline:hover {
+            background: #3b82f6;
             color: white;
+            transform: translateY(-2px);
         }
-
-        .features-section {
-            padding: 80px 0;
-            background: var(--light-gray);
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
         }
-
-        .feature-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            height: 100%;
-            border: none;
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
         }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            border-radius: 3px;
         }
-
-        .feature-icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: var(--dark-color);
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 60px;
-        }
-
-        .stats-section {
-            background: var(--primary-color);
+        
+        /* Security Badge */
+        .security-badge {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(16, 185, 129, 0.9);
             color: white;
-            padding: 60px 0;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .pricing-section {
-            padding: 80px 0;
-        }
-
-        .price-card {
-            background: white;
-            border-radius: 15px;
-            padding: 40px 30px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            position: relative;
-            transition: transform 0.3s ease;
-        }
-
-        .price-card.featured {
-            border: 3px solid var(--accent-color);
-            transform: scale(1.05);
-        }
-
-        .price-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .price-card.featured:hover {
-            transform: scale(1.05) translateY(-5px);
-        }
-
-        .price {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin: 20px 0;
-        }
-
-        .price-features {
-            list-style: none;
-            padding: 0;
-            margin: 30px 0;
-        }
-
-        .price-features li {
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .price-features li:last-child {
-            border-bottom: none;
-        }
-
-        .price-features i {
-            color: var(--success-color);
-            margin-right: 10px;
-        }
-
-        .faq-section {
-            padding: 80px 0;
-            background: var(--light-gray);
-        }
-
-        .faq-item {
-            background: white;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .faq-question {
-            background: var(--primary-color);
-            color: white;
-            padding: 20px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            border: none;
-            width: 100%;
-            text-align: left;
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
-        .faq-question:hover {
-            background: #1e3c72;
-        }
-
-        .faq-answer {
-            padding: 20px;
-            display: none;
-            background: white;
-            border-top: 1px solid #eee;
-        }
-
-        .faq-answer.active {
-            display: block;
-        }
-
-        .contact-section {
-            background: var(--dark-color);
-            color: white;
-            padding: 80px 0;
-        }
-
-        .contact-info {
-            background: rgba(255,255,255,0.1);
-            padding: 40px;
-            border-radius: 15px;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 12px;
             backdrop-filter: blur(10px);
-        }
-
-        .whatsapp-button {
-            background: #25d366;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            margin-top: 20px;
-        }
-
-        .whatsapp-button:hover {
-            background: #128c7e;
-            transform: translateY(-2px);
-            color: white;
-        }
-
-        .footer {
-            background: #1a1a1a;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 1.5rem;
-        }
-
-        .navbar-nav .nav-link {
             font-weight: 500;
-            margin: 0 15px;
         }
-
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .price-card.featured {
-                transform: none;
-                margin-bottom: 30px;
-            }
+        
+        /* Modern Section Dividers */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+        }
+        
+        /* Professional Typography */
+        .text-balance {
+            text-wrap: balance;
         }
     </style>
 </head>
-<body>
+
+<body class="bg-dark text-white font-sans overflow-x-hidden antialiased">
+   
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#home">
-                <i class="fas fa-globe"></i> WebSimples.mz
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Início</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#servicos">Serviços</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#precos">Preços</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#faq">FAQ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contacto">Contacto</a>
-                    </li>
-                </ul>
+    <nav class="fixed top-0 w-full z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="#home" class="text-2xl font-bold gradient-text flex items-center">
+                        
+                        WebSimples.mz
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link hover:text-accent transition-colors duration-300 font-medium">Início</a>
+                        <a href="#servicos" class="nav-link hover:text-accent transition-colors duration-300 font-medium">Serviços</a>
+                        <a href="#projetos" class="nav-link hover:text-accent transition-colors duration-300 font-medium">Projetos</a>
+                        <a href="#precos" class="nav-link hover:text-accent transition-colors duration-300 font-medium">Preços</a>
+                        <a href="#faq" class="nav-link hover:text-accent transition-colors duration-300 font-medium">FAQ</a>
+                        <a href="#contacto" class="nav-link hover:text-accent transition-colors duration-300 font-medium">Contacto</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-800 transition-colors duration-300">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden glass border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-300">Início</a>
+                <a href="#servicos" class="block px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-300">Serviços</a>
+                <a href="#projetos" class="block px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-300">Projetos</a>
+                <a href="#precos" class="block px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-300">Preços</a>
+                <a href="#faq" class="block px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-300">FAQ</a>
+                <a href="#contacto" class="block px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-300">Contacto</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="hero-content">
-                        <h1 class="hero-title">Seu Negócio Online em 72 Horas</h1>
-                        <p class="hero-subtitle">Websites profissionais para pequenos negócios em Moçambique - sem complicações, com resultados garantidos.</p>
-                        <a href="#contacto" class="cta-button">
-                            <i class="fas fa-rocket"></i> Começar Agora
+    <section id="home" class="min-h-screen flex items-center justify-center tech-grid relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/30 via-secondary/20 to-accent/10"></div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 w-16 h-16 bg-accent/10 rounded-2xl animate-float"></div>
+        <div class="absolute bottom-20 right-10 w-12 h-12 bg-accent/15 rounded-full animate-float" style="animation-delay: -2s;"></div>
+        <div class="absolute top-1/2 left-1/4 w-8 h-8 bg-accent/20 rounded-lg animate-float" style="animation-delay: -4s;"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="animate-slide-up">
+                    <div class="inline-flex items-center px-4 py-2 bg-accent/10 rounded-full text-accent text-sm font-medium mb-6">
+                        <i class="fas fa-rocket mr-2"></i>
+                        Entrega em 7 dias Garantida
+                    </div>
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black mb-6 leading-tight text-balance">
+                        Seu Negócio <span class="gradient-text">Online</span> em 7 dias!
+                    </h1>
+                    <p class="text-xl sm:text-2xl text-gray-300 mb-8 leading-relaxed max-w-2xl">
+                        Websites profissionais para pequenos negócios em Moçambique. Design moderno, performance otimizada e resultados garantidos.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contacto" class="btn-primary px-8 py-4 rounded-xl font-semibold text-center inline-flex items-center justify-center">
+                            <i class="fas fa-arrow-right mr-2"></i>
+                            Começar Agora
+                        </a>
+                        <a href="#projetos" class="btn-outline px-8 py-4 rounded-xl font-semibold text-center inline-flex items-center justify-center">
+                            <i class="fas fa-play mr-2"></i>
+                            Ver Projetos
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="text-center">
-                        <i class="fas fa-laptop-code" style="font-size: 15rem; opacity: 0.3;"></i>
+                
+                <div class="relative animate-fade-in">
+                  
+                        <!-- Decorative elements -->
+                        <div class="absolute -top-4 -right-4 w-24 h-24 bg-accent/10 rounded-full blur-xl"></div>
+                        <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-accent/5 rounded-full blur-2xl"></div>
                     </div>
                 </div>
             </div>
@@ -362,226 +338,524 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="stat-item">
-                        <div class="stat-number">72h</div>
-                        <p>Entrega Garantida</p>
+    <section class="py-16 bg-gradient-to-r from-primary to-secondary border-y border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="animate-scale-in">
+                    <div class="text-4xl font-black mb-2 text-accent">7 dias utéis</div>
+                    <p class="text-sm text-gray-400 font-medium">Entrega Garantida</p>
+                </div>
+                <div class="animate-scale-in" style="animation-delay: 0.1s;">
+                    <div class="text-4xl font-black mb-2 text-accent">80%</div>
+                    <p class="text-sm text-gray-400 font-medium">Acessos Mobile</p>
+                </div>
+                <div class="animate-scale-in" style="animation-delay: 0.2s;">
+                    <div class="text-4xl font-black mb-2 text-accent">24h</div>
+                    <p class="text-sm text-gray-400 font-medium">Proposta Comercial</p>
+                </div>
+                <div class="animate-scale-in" style="animation-delay: 0.3s;">
+                    <div class="text-4xl font-black mb-2 text-accent">3</div>
+                    <p class="text-sm text-gray-400 font-medium">Meses Hospedagem Grátis</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <div class="inline-flex items-center px-4 py-2 bg-accent/10 rounded-full text-accent text-sm font-medium mb-6">
+                    <i class="fas fa-star mr-2"></i>
+                    Serviços Premium
+                </div>
+                <h2 class="text-4xl sm:text-5xl font-black mb-6">
+                    Porquê Escolher a <span class="gradient-text">WebSimples.mz</span>?
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    Desenvolvemos websites otimizados para a realidade moçambicana com tecnologia de ponta
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-card glass p-8 rounded-2xl hover-lift group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-accent to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-mobile-alt text-2xl text-white"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4">Otimizado para Mobile</h4>
+                    <p class="text-gray-300 leading-relaxed">80% dos seus clientes acessam por telemóvel. Nossos sites são perfeitamente adaptados para dispositivos móveis e carregam rapidamente mesmo com internet lenta.</p>
+                </div>
+                
+                <div class="service-card glass p-8 rounded-2xl hover-lift group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-accent to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-clock text-2xl text-white"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4">Entrega em 72 Horas</h4>
+                    <p class="text-gray-300 leading-relaxed">Seu negócio não pode esperar. Desenvolvemos e entregamos websites profissionais em apenas 72 horas, sem comprometer a qualidade.</p>
+                </div>
+                
+                <div class="service-card glass p-8 rounded-2xl hover-lift group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-success to-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fab fa-whatsapp text-2xl text-white"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4">Integração WhatsApp</h4>
+                    <p class="text-gray-300 leading-relaxed">Conecte-se facilmente com seus clientes através do WhatsApp Business. Suporte disponível em Português e Inglês.</p>
+                </div>
+                
+                <div class="service-card glass p-8 rounded-2xl hover-lift group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-accent to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-server text-2xl text-white"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4">Hospedagem Inclusa</h4>
+                    <p class="text-gray-300 leading-relaxed">3 meses de hospedagem grátis incluídos. Após esse período, planos trimestrais ou anuais conforme sua preferência.</p>
+                </div>
+                
+                <div class="service-card glass p-8 rounded-2xl hover-lift group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-accent to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-headset text-2xl text-white"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4">Suporte Local</h4>
+                    <p class="text-gray-300 leading-relaxed">Suporte técnico personalizado em Português, com conhecimento da realidade dos negócios moçambicanos.</p>
+                </div>
+                
+                <div class="service-card glass p-8 rounded-2xl hover-lift group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-accent to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-chart-line text-2xl text-white"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4">Foco em Resultados</h4>
+                    <p class="text-gray-300 leading-relaxed">Websites desenvolvidos para converter visitantes em clientes reais. Cada elemento é pensado para aumentar suas vendas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Projects Section -->
+    <section id="projetos" class="py-24 bg-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <div class="inline-flex items-center px-4 py-2 bg-accent/10 rounded-full text-accent text-sm font-medium mb-6">
+                    <i class="fas fa-trophy mr-2"></i>
+                    Portfolio de Sucesso
+                </div>
+                <h2 class="text-4xl sm:text-5xl font-black mb-6">
+                    Nossos <span class="gradient-text">Projetos</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    Veja alguns dos websites que desenvolvemos para negócios moçambicanos
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card glass rounded-2xl overflow-hidden hover-lift group">
+                    <div class="h-48 bg-gradient-to-br from-gray-700 to-gray-900 relative overflow-hidden">
+                        <img src="agrishopnampula.vercel.app_.png" alt="Restaurante Sabor Local Website" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <div class="w-12 h-12 bg-accent/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                                <i class="fas fa-plant text-accent text-lg"></i>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="px-3 py-1 bg-success/20 backdrop-blur-sm text-success rounded-full text-xs font-medium">
+                                Concluído
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">Agrishop Nampula</h4>
+                        <p class="text-gray-400 mb-4 text-sm leading-relaxed">Website para uma agrishop online baseada em Nampula, integração com Whatsapp e catalogo de produtos.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">Responsivo</span>
+                            <span class="px-3 py-1 bg-success/10 text-success rounded-full text-xs font-medium">WhatsApp</span>
+                            <span class="px-3 py-1 bg-warning/10 text-warning rounded-full text-xs font-medium">Catalogo de produtos</span>
+                        </div>
+                        <a href="https://agrishop-nampula.vercel.app" class="text-accent hover:text-blue-400 transition-colors duration-300 font-medium text-sm inline-flex items-center">
+                            Ver Detalhes <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="stat-item">
-                        <div class="stat-number">80%</div>
-                        <p>Acessos Mobile</p>
+                
+                <!-- Project 2 -->
+                <div class="project-card glass rounded-2xl overflow-hidden hover-lift group">
+                    <div class="h-48 bg-gradient-to-br from-gray-700 to-gray-900 relative overflow-hidden">
+                        <img src="/placeholder.svg?height=192&width=384" alt="Loja Moda Maputo E-commerce" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <div class="w-12 h-12 bg-accent/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                                <i class="fas fa-store text-accent text-lg"></i>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="px-3 py-1 bg-success/20 backdrop-blur-sm text-success rounded-full text-xs font-medium">
+                                Concluído
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">Loja Moda Maputo</h4>
+                        <p class="text-gray-400 mb-4 text-sm leading-relaxed">E-commerce para loja de roupas com catálogo de produtos e integração de pagamentos.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">E-commerce</span>
+                            <span class="px-3 py-1 bg-warning/10 text-warning rounded-full text-xs font-medium">Pagamentos</span>
+                            <span class="px-3 py-1 bg-success/10 text-success rounded-full text-xs font-medium">Catálogo</span>
+                        </div>
+                        <a href="#contacto" class="text-accent hover:text-blue-400 transition-colors duration-300 font-medium text-sm inline-flex items-center">
+                            Ver Detalhes <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="stat-item">
-                        <div class="stat-number">24h</div>
-                        <p>Proposta Comercial</p>
+                
+                <!-- Project 3 -->
+                <div class="project-card glass rounded-2xl overflow-hidden hover-lift group">
+                    <div class="h-48 bg-gradient-to-br from-gray-700 to-gray-900 relative overflow-hidden">
+                        <img src="/placeholder.svg?height=192&width=384" alt="Consultoria Empresarial Website" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <div class="w-12 h-12 bg-accent/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                                <i class="fas fa-briefcase text-accent text-lg"></i>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="px-3 py-1 bg-success/20 backdrop-blur-sm text-success rounded-full text-xs font-medium">
+                                Concluído
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">Blue Infinity Agência de viagem e turismo</h4>
+                        <p class="text-gray-400 mb-4 text-sm leading-relaxed">Website corporativo para uma agência de viagens moçambicana.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">Corporativo</span>
+                            <span class="px-3 py-1 bg-neutral/10 text-neutral rounded-full text-xs font-medium">Formulários</span>
+                            <span class="px-3 py-1 bg-success/10 text-success rounded-full text-xs font-medium">SEO</span>
+                        </div>
+                        <a href="#contacto" class="text-accent hover:text-blue-400 transition-colors duration-300 font-medium text-sm inline-flex items-center">
+                            Ver Detalhes <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="stat-item">
-                        <div class="stat-number">3</div>
-                        <p>Meses Hospedagem Grátis</p>
+                
+                <!-- Project 4 -->
+                <div class="project-card glass rounded-2xl overflow-hidden hover-lift group">
+                    <div class="h-48 bg-gradient-to-br from-gray-700 to-gray-900 relative overflow-hidden">
+                        <img src="graphika-designs.vercel.app_.png"  alt="Centro de Formação Platform" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <div class="w-12 h-12 bg-accent/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                                <i class="fas fa-graduation-cap text-accent text-lg"></i>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="px-3 py-1 bg-success/20 backdrop-blur-sm text-success rounded-full text-xs font-medium">
+                                Concluído
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">graphikA Designs</h4>
+                        <p class="text-gray-400 mb-4 text-sm leading-relaxed">Website para uma empresa de design gráfico de ateltas de qualquer desporto.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">Design gráfico</span>
+                            <span class="px-3 py-1 bg-warning/10 text-warning rounded-full text-xs font-medium">Portfólio</span>
+                            
+                        </div>
+                        <a href="https://graphik-designs.vercel.app" class="text-accent hover:text-blue-400 transition-colors duration-300 font-medium text-sm inline-flex items-center">
+                            Ver Detalhes <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-card glass rounded-2xl overflow-hidden hover-lift group">
+                    <div class="h-48 bg-gradient-to-br from-gray-700 to-gray-900 relative overflow-hidden">
+                        <img src="/placeholder.svg?height=192&width=384" alt="Clínica Médica Website" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <div class="w-12 h-12 bg-accent/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                                <i class="fas fa-heartbeat text-accent text-lg"></i>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="px-3 py-1 bg-success/20 backdrop-blur-sm text-success rounded-full text-xs font-medium">
+                                Concluído
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">Clínica Médica</h4>
+                        <p class="text-gray-400 mb-4 text-sm leading-relaxed">Website para clínica com agendamento online e informações sobre serviços médicos.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">Saúde</span>
+                            <span class="px-3 py-1 bg-success/10 text-success rounded-full text-xs font-medium">Agendamento</span>
+                            <span class="px-3 py-1 bg-neutral/10 text-neutral rounded-full text-xs font-medium">Informativo</span>
+                        </div>
+                        <a href="#contacto" class="text-accent hover:text-blue-400 transition-colors duration-300 font-medium text-sm inline-flex items-center">
+                            Ver Detalhes <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="project-card glass rounded-2xl overflow-hidden hover-lift group">
+                    <div class="h-48 bg-gradient-to-br from-gray-700 to-gray-900 relative overflow-hidden">
+                        <img src="/placeholder.svg?height=192&width=384" alt="Oficina Automóvel Website" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <div class="w-12 h-12 bg-accent/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                                <i class="fas fa-car text-accent text-lg"></i>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="px-3 py-1 bg-success/20 backdrop-blur-sm text-success rounded-full text-xs font-medium">
+                                Concluído
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">Oficina Automóvel</h4>
+                        <p class="text-gray-400 mb-4 text-sm leading-relaxed">Website para oficina com galeria de serviços e sistema de orçamentos online.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">Automóvel</span>
+                            <span class="px-3 py-1 bg-warning/10 text-warning rounded-full text-xs font-medium">Orçamentos</span>
+                            <span class="px-3 py-1 bg-neutral/10 text-neutral rounded-full text-xs font-medium">Galeria</span>
+                        </div>
+                        <a href="#contacto" class="text-accent hover:text-blue-400 transition-colors duration-300 font-medium text-sm inline-flex items-center">
+                            Ver Detalhes <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="servicos" class="features-section">
-        <div class="container">
-            <h2 class="section-title">Porquê Escolher a WebSimples.mz?</h2>
-            <p class="section-subtitle">Desenvolvemos websites otimizados para a realidade moçambicana</p>
-            
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h4>Otimizado para Mobile</h4>
-                        <p>80% dos seus clientes acessam por telemóvel. Nossos sites são perfeitamente adaptados para dispositivos móveis e carregam rapidamente mesmo com internet lenta.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <h4>Entrega em 72 Horas</h4>
-                        <p>Seu negócio não pode esperar. Desenvolvemos e entregamos websites profissionais em apenas 72 horas, sem comprometer a qualidade.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
-                        <h4>Integração WhatsApp</h4>
-                        <p>Conecte-se facilmente com seus clientes através do WhatsApp Business. Suporte disponível em Português e Inglês.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-server"></i>
-                        </div>
-                        <h4>Hospedagem Inclusa</h4>
-                        <p>3 meses de hospedagem grátis incluídos. Após esse período, planos trimestrais ou anuais conforme sua preferência.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-headset"></i>
-                        </div>
-                        <h4>Suporte Local</h4>
-                        <p>Suporte técnico personalizado em Português, com conhecimento da realidade dos negócios moçambicanos.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h4>Foco em Resultados</h4>
-                        <p>Websites desenvolvidos para converter visitantes em clientes reais. Cada elemento é pensado para aumentar suas vendas.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
 
     <!-- Pricing Section -->
-    <section id="precos" class="pricing-section">
-        <div class="container">
-            <h2 class="section-title">Planos Transparentes</h2>
-            <p class="section-subtitle">Sem custos escondidos, com tudo que seu negócio precisa</p>
+    <section id="precos" class="py-24 bg-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <div class="inline-flex items-center px-4 py-2 bg-accent/10 rounded-full text-accent text-sm font-medium mb-6">
+                    <i class="fas fa-tag mr-2"></i>
+                    Preços Transparentes
+                </div>
+                <h2 class="text-4xl sm:text-5xl font-black mb-6">
+                    Planos <span class="gradient-text">Profissionais</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    Sem custos escondidos, com tudo que seu negócio precisa para crescer online
+                </p>
+            </div>
             
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="price-card">
-                        <h3>Básico</h3>
-                        <div class="price">9.000 MT</div>
-                        <ul class="price-features">
-                            <li><i class="fas fa-check"></i> Website de 1-3 páginas</li>
-                            <li><i class="fas fa-check"></i> Design responsivo</li>
-                            <li><i class="fas fa-check"></i> Integração WhatsApp</li>
-                            <li><i class="fas fa-check"></i> 3 meses hospedagem grátis</li>
-                            <li><i class="fas fa-check"></i> Suporte técnico</li>
-                        </ul>
-                        <a href="#contacto" class="cta-button">Escolher Plano</a>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Basic Plan -->
+                <div class="price-card glass p-8 rounded-2xl text-center hover-lift">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Básico</h3>
+                        <p class="text-gray-400 text-sm">Ideal para começar</p>
                     </div>
+                    <div class="mb-8">
+                        <div class="text-4xl font-black gradient-text mb-2">9.000 MT</div>
+                        <p class="text-gray-400 text-sm">Pagamento único</p>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-left">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-success mr-3 text-sm"></i>
+                            <span class="text-sm">Website de 1-3 páginas</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-success mr-3 text-sm"></i>
+                            <span class="text-sm">Design responsivo</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-success mr-3 text-sm"></i>
+                            <span class="text-sm">Integração WhatsApp</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-success mr-3 text-sm"></i>
+                            <span class="text-sm">3 meses hospedagem grátis</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-success mr-3 text-sm"></i>
+                            <span class="text-sm">Suporte técnico</span>
+                        </li>
+                    </ul>
+                    <a href="#contacto" class="w-full btn-primary px-6 py-3 rounded-xl font-semibold inline-block">
+                        Escolher Plano
+                    </a>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="price-card featured">
-                        <h3>Profissional</h3>
-                        <div class="price">15.000 MT</div>
-                        <ul class="price-features">
-                            <li><i class="fas fa-check"></i> Website de 5 páginas</li>
-                            <li><i class="fas fa-check"></i> Design personalizado</li>
-                            <li><i class="fas fa-check"></i> Integração WhatsApp</li>
-                            <li><i class="fas fa-check"></i> Formulário de contacto</li>
-                            <li><i class="fas fa-check"></i> 3 meses hospedagem grátis</li>
-                            <li><i class="fas fa-check"></i> Suporte 24/7 </li>
-                        </ul>
-                        <a href="#contacto" class="cta-button">Mais Popular</a>
+                
+                <!-- Professional Plan -->
+                <div class="price-card glass p-8 rounded-2xl text-center hover-lift border-2 border-accent relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-accent to-blue-600 px-4 py-1 rounded-full text-sm font-semibold text-white">
+                        Mais Popular
                     </div>
+                    <div class="mb-6 mt-2">
+                        <h3 class="text-2xl font-bold mb-2">Profissional</h3>
+                        <p class="text-gray-400 text-sm">Recomendado</p>
+                    </div>
+                    <div class="mb-8">
+                        <div class="text-4xl font-black gradient-text mb-2">15.000 MT</div>
+                        <p class="text-gray-400 text-sm">Pagamento único</p>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-left">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-success mr-3 text-sm"></i>
+                            <span class="text-sm">Website de 5 páginas</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-success mr-3 text-sm"></i>
+                            <span class="text-sm">Design personalizado</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-success mr-3 text-sm"></i>
+                            <span class="text-sm">Integração WhatsApp</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-success mr-3 text-sm"></i>
+                            <span class="text-sm">Formulário de contacto</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-success mr-3 text-sm"></i>
+                            <span class="text-sm">3 meses hospedagem grátis</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-success mr-3 text-sm"></i>
+                            <span class="text-sm">Suporte 24/7</span>
+                        </li>
+                    </ul>
+                    <a href="#contacto" class="w-full bg-gradient-to-r from-accent to-blue-600 px-6 py-3 rounded-xl font-semibold inline-block text-white hover:from-blue-600 hover:to-accent transition-all duration-300">
+                        Escolher Plano
+                    </a>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="price-card">
-                        <h3>Profissional</h3>
-                        <div class="price">25.000 MT</div>
-                        <ul class="price-features">
-                            <li><i class="fas fa-check"></i> Website de 10 páginas</li>
-                            <li><i class="fas fa-check"></i> Design personalizado</li>
-                            <li><i class="fas fa-check"></i> Integração WhatsApp</li>
-                            <li><i class="fas fa-check"></i> Formúlario de contacto</li>
-                            <li><i class="fas fa-check"></i> 3 meses hospedagem grátis</li>
-                            <li><i class="fas fa-check"></i> Suporte 24/7</li>
-                        </ul>
-                        <a href="#contacto" class="cta-button">Escolher Plano</a>
+                
+                <!-- Premium Plan -->
+                <div class="price-card glass p-8 rounded-2xl text-center hover-lift">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Premium</h3>
+                        <p class="text-gray-400 text-sm">Máximo desempenho</p>
                     </div>
+                    <div class="mb-8">
+                        <div class="text-4xl font-black gradient-text mb-2">25.000 MT</div>
+                        <p class="text-gray-400 text-sm">Pagamento único</p>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-left">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-success mr-3 text-sm"></i>
+                            <span class="text-sm">Website de 10 páginas</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-success mr-3 text-sm"></i>
+                            <span class="text-sm">Design personalizado</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-success mr-3 text-sm"></i>
+                            <span class="text-sm">Integração WhatsApp</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-success mr-3 text-sm"></i>
+                            <span class="text-sm">Formulário de contacto</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-success mr-3 text-sm"></i>
+                            <span class="text-sm">3 meses hospedagem grátis</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-success mr-3 text-sm"></i>
+                            <span class="text-sm">Suporte 24/7</span>
+                        </li>
+                    </ul>
+                    <a href="#contacto" class="w-full btn-primary px-6 py-3 rounded-xl font-semibold inline-block">
+                        Escolher Plano
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="faq-section">
-        <div class="container">
-            <h2 class="section-title">Perguntas Frequentes</h2>
-            <p class="section-subtitle">Esclareça todas as suas dúvidas sobre nossos serviços</p>
+    <section id="faq" class="py-24 bg-secondary">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <div class="inline-flex items-center px-4 py-2 bg-accent/10 rounded-full text-accent text-sm font-medium mb-6">
+                    <i class="fas fa-question-circle mr-2"></i>
+                    Dúvidas Frequentes
+                </div>
+                <h2 class="text-4xl sm:text-5xl font-black mb-6">
+                    Perguntas <span class="gradient-text">Frequentes</span>
+                </h2>
+                <p class="text-xl text-gray-300 leading-relaxed">
+                    Esclareça todas as suas dúvidas sobre nossos serviços
+                </p>
+            </div>
             
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFAQ(this)">
-                            <i class="fas fa-clock"></i> Realmente entregam em 72 horas?
-                        </button>
-                        <div class="faq-answer">
-                            <p>Sim! Nosso processo é otimizado para entregar websites profissionais em até 72 horas. Isto é possível porque utilizamos templates pré-desenvolvidos que personalizamos conforme suas necessidades específicas.</p>
-                        </div>
+            <div class="space-y-4">
+                <div class="faq-item glass rounded-2xl overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 font-semibold text-lg hover:bg-white/5 transition-colors duration-300 flex items-center justify-between">
+                        <span class="flex items-center">
+                            <i class="fas fa-clock mr-4 text-accent"></i>
+                            Realmente entregam em 7 dias utéis?
+                        </span>
+                        <i class="fas fa-chevron-down transition-transform duration-300 text-accent"></i>
+                    </button>
+                    <div class="faq-answer hidden p-6 pt-0 text-gray-300 leading-relaxed">
+                        <p>Sim! Nosso processo é otimizado para entregar websites profissionais em até 7 dias utéis.</p>
                     </div>
-                    
-                    <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFAQ(this)">
-                            <i class="fas fa-money-bill-wave"></i> Existem custos escondidos?
-                        </button>
-                        <div class="faq-answer">
-                            <p>Absolutamente não! O preço apresentado inclui tudo: desenvolvimento, hospedagem grátis pelo período indicado, integração WhatsApp e suporte técnico. Após o período grátis, oferecemos planos de hospedagem transparentes.</p>
-                        </div>
+                </div>
+                
+                <div class="faq-item glass rounded-2xl overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 font-semibold text-lg hover:bg-white/5 transition-colors duration-300 flex items-center justify-between">
+                        <span class="flex items-center">
+                            <i class="fas fa-money-bill-wave mr-4 text-accent"></i>
+                            Existem custos escondidos?
+                        </span>
+                        <i class="fas fa-chevron-down transition-transform duration-300 text-accent"></i>
+                    </button>
+                    <div class="faq-answer hidden p-6 pt-0 text-gray-300 leading-relaxed">
+                        <p>Absolutamente não! O preço apresentado inclui tudo: desenvolvimento, hospedagem grátis pelo período indicado, integração WhatsApp e suporte técnico. Após o período grátis, oferecemos planos de hospedagem transparentes e acessíveis.</p>
                     </div>
-                    
-                    <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFAQ(this)">
-                            <i class="fas fa-mobile-alt"></i> O website funciona bem em telemóveis?
-                        </button>
-                        <div class="faq-answer">
-                            <p>Sim! Todos os nossos websites são desenvolvidos com foco mobile-first, garantindo perfeita visualização e funcionamento em telemóveis, tablets e computadores. Testamos em dispositivos reais para garantir a melhor experiência.</p>
-                        </div>
+                </div>
+                
+                <div class="faq-item glass rounded-2xl overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 font-semibold text-lg hover:bg-white/5 transition-colors duration-300 flex items-center justify-between">
+                        <span class="flex items-center">
+                            <i class="fas fa-mobile-alt mr-4 text-accent"></i>
+                            O website funciona bem em telemóveis?
+                        </span>
+                        <i class="fas fa-chevron-down transition-transform duration-300 text-accent"></i>
+                    </button>
+                    <div class="faq-answer hidden p-6 pt-0 text-gray-300 leading-relaxed">
+                        <p>Sim! Todos os nossos websites são desenvolvidos com foco mobile-first, garantindo perfeita visualização e funcionamento em telemóveis, tablets e computadores. Testamos em dispositivos reais para garantir a melhor experiência do usuário.</p>
                     </div>
-                    
-                    <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFAQ(this)">
-                            <i class="fas fa-edit"></i> Posso fazer alterações após a entrega?
-                        </button>
-                        <div class="faq-answer">
-                            <p>Claro! Oferecemos suporte para pequenas alterações de conteúdo. Para mudanças maiores de design ou funcionalidade, temos pacotes de manutenção mensais acessíveis.</p>
-                        </div>
+                </div>
+                
+                <div class="faq-item glass rounded-2xl overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 font-semibold text-lg hover:bg-white/5 transition-colors duration-300 flex items-center justify-between">
+                        <span class="flex items-center">
+                            <i class="fas fa-edit mr-4 text-accent"></i>
+                            Posso fazer alterações após a entrega?
+                        </span>
+                        <i class="fas fa-chevron-down transition-transform duration-300 text-accent"></i>
+                    </button>
+                    <div class="faq-answer hidden p-6 pt-0 text-gray-300 leading-relaxed">
+                        <p>Claro! Oferecemos suporte para pequenas alterações de conteúdo sem custo adicional. Para mudanças maiores de design ou funcionalidade, temos pacotes de manutenção mensais acessíveis e transparentes.</p>
                     </div>
-                    
-                    <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFAQ(this)">
-                            <i class="fas fa-headset"></i> Como funciona o suporte?
-                        </button>
-                        <div class="faq-answer">
-                            <p>O suporte é feito principalmente via WhatsApp em Português ou Inglês. Nosso tempo de resposta é de até 24 horas para questões técnicas e imediato para emergências.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFAQ(this)">
-                            <i class="fas fa-search"></i> O website aparece no Google?
-                        </button>
-                        <div class="faq-answer">
-                            <p>Sim! Todos os websites são desenvolvidos seguindo as melhores práticas de SEO básico. Também oferecemos serviços de otimização avançada para quem deseja melhor posicionamento nos resultados de busca.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFAQ(this)">
-                            <i class="fas fa-shield-alt"></i> Meus dados estão seguros?
-                        </button>
-                        <div class="faq-answer">
-                            <p>Absolutamente! Utilizamos certificados SSL gratuitos em todos os websites e seguimos as melhores práticas de segurança. Seus dados e os dos seus clientes estão protegidos.</p>
-                        </div>
+                </div>
+                
+                <div class="faq-item glass rounded-2xl overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 font-semibold text-lg hover:bg-white/5 transition-colors duration-300 flex items-center justify-between">
+                        <span class="flex items-center">
+                            <i class="fas fa-shield-alt mr-4 text-accent"></i>
+                            Meus dados estão seguros?
+                        </span>
+                        <i class="fas fa-chevron-down transition-transform duration-300 text-accent"></i>
+                    </button>
+                    <div class="faq-answer hidden p-6 pt-0 text-gray-300 leading-relaxed">
+                        <p>Absolutamente! Utilizamos certificados SSL em todos os websites e seguimos as melhores práticas de segurança internacional. Seus dados e os dos seus clientes estão protegidos com criptografia de nível bancário.</p>
                     </div>
                 </div>
             </div>
@@ -589,137 +863,391 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contacto" class="contact-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h2>Pronto para Começar?</h2>
-                    <p class="lead">Fale connosco hoje mesmo e receba uma proposta personalizada em 24 horas.</p>
-                    <div class="contact-info">
-                        <h4><i class="fas fa-phone"></i> Contacto</h4>
-                        <p>WhatsApp: +258 87 26 227 21</p>
-                        <p>Email: websimples.mz@gmail.com</p>
-                        <p>Horário: Segunda a Sexta, 8h às 18h</p>
+    <section id="contacto" class="py-24 bg-gradient-to-br from-primary to-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center px-4 py-2 bg-accent/10 rounded-full text-accent text-sm font-medium mb-6">
+                    <i class="fas fa-handshake mr-2"></i>
+                    Vamos Conversar
+                </div>
+                <h2 class="text-4xl sm:text-5xl font-black mb-6">
+                    Pronto para <span class="gradient-text">Começar</span>?
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    Fale connosco hoje mesmo e receba uma proposta personalizada em 24 horas
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <div class="glass p-8 rounded-2xl mb-8">
+                        <h4 class="text-2xl font-bold mb-6 flex items-center">
+                            <i class="fas fa-phone mr-3 text-accent"></i>
+                            Informações de Contacto
+                        </h4>
+                        <div class="space-y-6">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-success/20 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="fab fa-whatsapp text-success"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">WhatsApp</p>
+                                    <p class="text-gray-400 text-sm">+258 87 26 227 21</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope text-accent"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Email</p>
+                                    <p class="text-gray-400 text-sm">websimples.mz@gmail.com</p>
+                                </div>
+                            </div>
+                              <!-- <div class="flex items-center">
+                                <div class="w-12 h-12 bg-pink-500/20 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="fab fa-instagram text-pink-500"></i>
+                                     <div>
+                                    <p class="font-medium">Instagram</p>
+                                    <a href="https://instagram.com/websimples.mz" target="_blank" rel="noopener noreferrer" class="text-gray-400 text-sm hover:text-accent transition-colors">@websimples.mz</a>
+                                </div> -->
+                                <!-- </div> -->
+                                  <div class="flex items-center">
+                                <div class="w-12 h-12 bg-pink-500/20  rounded-full flex items-center justify-center mr-4 text-pink-500 transition-colors duration-300">
+                                    <span class="[&>svg]:h-5 [&>svg]:w-5">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 448 512">
+    <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+    <path
+      d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+  </svg>
+</span>
+                                </div>
+
+                                <div>
+                                    <p class="font-medium">Instagram</p>
+                                    <p class="text-gray-400 text-sm">websimples.mz</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-warning/20 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="fas fa-clock text-warning"></i>
+                                </div>
+
+                                <div>
+                                    <p class="font-medium">Horário de Atendimento</p>
+                                    <p class="text-gray-400 text-sm">Segunda a Sexta, 8h às 18h</p>
+                                </div>
+                            </div>
+                        </div>
                         
-                        <a href="https://wa.me/25872622721" class="whatsapp-button">
-                            <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+                        <a href="https://wa.me/25872622721" class="inline-block mt-8 bg-gradient-to-r from-success to-green-600 px-8 py-4 rounded-xl font-semibold hover:scale-105 transform transition-all duration-300 text-white">
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            Falar no WhatsApp
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="contact-info">
-                        <h4><i class="fas fa-cogs"></i> Processo Simples</h4>
-                        <ol style="padding-left: 20px;">
-                            <li><strong>Contacte-nos</strong> - Via WhatsApp ou email</li>
-                            <li><strong>Receba a proposta</strong> - Em até 24 horas</li>
-                            <li><strong>Aprove o projeto</strong> - Fazemos pequenos ajustes se necessário</li>
-                            <li><strong>Receba seu website</strong> - Pronto em 72 horas!</li>
-                        </ol>
-                    </div>
-                </div>
+                
+                
+                    <div class="glass p-8 rounded-2xl">
+    <h4 class="text-2xl font-bold mb-6 flex items-center">
+        <i class="fas fa-cogs mr-3 text-accent"></i>
+        Processo Simples
+    </h4>
+    <div class="space-y-8">
+        <div class="flex items-start">
+            <div class="w-10 h-10 bg-gradient-to-br from-accent to-blue-600 rounded-xl flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                <span class="text-sm font-bold text-white">1</span>
+            </div>
+            <div>
+                <h5 class="font-semibold mb-2">Contacte-nos</h5>
+                <p class="text-gray-400 text-sm leading-relaxed">Via WhatsApp ou email com detalhes do seu negócio e necessidades específicas</p>
             </div>
         </div>
+        
+        <div class="flex items-start">
+            <div class="w-10 h-10 bg-gradient-to-br from-accent to-blue-600 rounded-xl flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                <span class="text-sm font-bold text-white">2</span>
+            </div>
+            <div>
+                <h5 class="font-semibold mb-2">Receba a proposta</h5>
+                <p class="text-gray-400 text-sm leading-relaxed">Proposta personalizada e detalhada em até 24 horas com preços transparentes</p>
+            </div>
+        </div>
+        
+        <div class="flex items-start">
+            <div class="w-10 h-10 bg-gradient-to-br from-accent to-blue-600 rounded-xl flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                <span class="text-sm font-bold text-white">3</span>
+            </div>
+            <div>
+                <h5 class="font-semibold mb-2">Aprove o projeto</h5>
+                <p class="text-gray-400 text-sm leading-relaxed">Revisamos juntos os detalhes e fazemos ajustes se necessário</p>
+            </div>
+        </div>
+        
+        <div class="flex items-start">
+            <div class="w-10 h-10 bg-gradient-to-br from-success to-green-600 rounded-xl flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                <span class="text-sm font-bold text-white">4</span>
+            </div>
+            <div>
+                <h5 class="font-semibold mb-2">Receba seu website</h5>
+                <p class="text-gray-400 text-sm leading-relaxed">Website pronto e funcionando em 72 horas, com tudo configurado!</p>
+            </div>
+        </div>
+    </div>
+</div>
+                
+            </div>
+        </div>
+
+        <div class="lg:col-span-2">
+                <div class="glass p-8 rounded-2xl">
+                    <h4 class="text-2xl font-bold mb-6 flex items-center">
+                        <i class="fab fa-whatsapp mr-3 text-success"></i>
+                        Envie-nos uma Mensagem
+                    </h4>
+                    <p class="text-gray-300 mb-6">
+                        Preencha o formulário abaixo para nos enviar uma mensagem direta pelo WhatsApp. Responderemos o mais rápido possível!
+                    </p>
+                    
+                    <form id="whatsappForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium mb-2">Seu Nome *</label>
+                                <input type="text" id="name" name="name" required 
+                                       class="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-700 focus:border-accent focus:ring-2 focus:ring-accent/50 transition-all duration-300 text-white placeholder-gray-400">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium mb-2">Número de Telemóvel *</label>
+                                <input type="tel" id="phone" name="phone" required 
+                                       class="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-700 focus:border-accent focus:ring-2 focus:ring-accent/50 transition-all duration-300 text-white placeholder-gray-400" 
+                                       placeholder="+258">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email" id="email" name="email" 
+                                   class="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-700 focus:border-accent focus:ring-2 focus:ring-accent/50 transition-all duration-300 text-white placeholder-gray-400">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium mb-2">Assunto *</label>
+                            <select id="subject" name="subject" required 
+                                    class="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-700 focus:border-accent focus:ring-2 focus:ring-accent/50 transition-all duration-300 text-black">
+                                <option value="" disabled selected>Selecione um assunto</option>
+                                <option value="Orçamento">Pedido de Orçamento</option>
+                                <option value="Dúvida">Dúvida sobre Serviços</option>
+                                <option value="Suporte">Suporte Técnico</option>
+                                <option value="Outro">Outro Assunto</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-2">Mensagem *</label>
+                            <textarea id="message" name="message" rows="4" required 
+                                      class="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-700 focus:border-accent focus:ring-2 focus:ring-accent/50 transition-all duration-300 text-white placeholder-gray-400"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-success hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center">
+                            <i class="fab fa-whatsapp mr-2 text-lg"></i>
+                            Enviar Mensagem pelo WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+       
+          
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h5><i class="fas fa-globe"></i> WebSimples.mz</h5>
-                    <p>Websites profissionais para pequenos negócios em Moçambique</p>
+    <<footer class="bg-dark border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <a href="#home" class="text-2xl font-bold gradient-text flex items-center mb-6">
+                       
+                        WebSimples.mz
+                    </a>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Desenvolvimento de websites profissionais para pequenos negócios em Moçambique. Entrega em 72 horas com qualidade garantida.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://wa.me/258872622721" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-success/20 hover:bg-success/30 rounded-full flex items-center justify-center text-success transition-colors duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://instagram.com/websimples.mz" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-pink-500/20 hover:bg-pink-500/30 rounded-full flex items-center justify-center text-pink-500 transition-colors duration-300">
+                           <span class="[&>svg]:h-5 [&>svg]:w-5">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 448 512">
+    <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+    <path
+      d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+  </svg>
+</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="col-md-6 text-md-end">
-                    <p>&copy; 2025 WebSimples.mz. Todos os direitos reservados.</p>
-                    <p>Desenvolvido para impulsionar negócios moçambicanos</p>
+                
+                <div>
+                    <h5 class="text-lg font-semibold mb-6">Links Rápidos</h5>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-accent transition-colors duration-300">Início</a></li>
+                        <li><a href="#servicos" class="text-gray-400 hover:text-accent transition-colors duration-300">Serviços</a></li>
+                        <li><a href="#projetos" class="text-gray-400 hover:text-accent transition-colors duration-300">Projetos</a></li>
+                        <li><a href="#precos" class="text-gray-400 hover:text-accent transition-colors duration-300">Preços</a></li>
+                        <li><a href="#faq" class="text-gray-400 hover:text-accent transition-colors duration-300">FAQ</a></li>
+                    </ul>
                 </div>
+                
+                <div>
+                    <h5 class="text-lg font-semibold mb-6">Contactos</h5>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mr-3 mt-1 text-accent"></i>
+                            <span>+258 87 26 227 21</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mr-3 mt-1 text-accent"></i>
+                            <span>websimples.mz@gmail.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mr-3 mt-1 text-accent"></i>
+                            <span>Maputo,Moçambique</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                    &copy; 2025 WebSimples.mz. Todos os direitos reservados.
+                </p>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+   
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 left-8 w-12 h-12 bg-accent/20 backdrop-blur-sm rounded-full flex items-center justify-center text-accent text-xl border border-accent/30 hover:bg-accent/30 transition-colors duration-300 z-50 hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script>
-        // Smooth scrolling for navigation links
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // FAQ Toggle Function - Fixed
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('.fa-chevron-down');
+                const allAnswers = document.querySelectorAll('.faq-answer');
+                const allIcons = document.querySelectorAll('.faq-question .fa-chevron-down');
+
+                // Close all other FAQs
+                allAnswers.forEach(item => {
+                    if (item !== answer) {
+                        item.classList.add('hidden');
+                    }
+                });
+
+                // Reset all icons
+                allIcons.forEach(item => {
+                    if (item !== icon) {
+                        item.style.transform = 'rotate(0deg)';
+                    }
+                });
+
+                // Toggle current FAQ
+                answer.classList.toggle('hidden');
+                
+                // Rotate icon
+                if (answer.classList.contains('hidden')) {
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // Add smooth scrolling enhancement
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
                     });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
                 }
             });
         });
 
-        // FAQ Toggle Function
-        function toggleFAQ(button) {
-            const answer = button.nextElementSibling;
-            const allAnswers = document.querySelectorAll('.faq-answer');
-            const allQuestions = document.querySelectorAll('.faq-question');
-            
-            // Close all other FAQs
-            allAnswers.forEach(item => {
-                if (item !== answer) {
-                    item.classList.remove('active');
-                }
-            });
-            
-            // Toggle current FAQ
-            answer.classList.toggle('active');
-        }
-
-        // Navbar background change on scroll
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
+        // Enhanced navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
+                navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+                navbar.style.backdropFilter = 'blur(12px)';
+                navbar.style.borderBottom = '1px solid rgba(59, 130, 246, 0.1)';
             } else {
-                navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+                navbar.style.background = 'rgba(15, 23, 42, 0.8)';
+                navbar.style.backdropFilter = 'blur(8px)';
+                navbar.style.borderBottom = 'none';
             }
         });
+        
+        //Whatsapp form submission
+        // WhatsApp Form Submission - Fixed Version
+    const whatsappForm = document.getElementById('whatsappForm');
+    whatsappForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+        
+        // Format WhatsApp message with proper encoding
+        const whatsappMessage = `Olá WebSimples.mz!%0A%0A*Nome:* ${encodeURIComponent(name)}%0A*Telefone:* ${encodeURIComponent(phone)}%0A*Email:* ${email ? encodeURIComponent(email) : 'Não informado'}%0A*Assunto:* ${encodeURIComponent(subject)}%0A%0A*Mensagem:*%0A${encodeURIComponent(message)}`;
+        
+        // Open WhatsApp with pre-filled message
+        window.open(`https://wa.me/258872622721?text=${whatsappMessage}`, '_blank');
+        
+        // Optional: Show confirmation message
+        alert('Obrigado! Você será redirecionado para o WhatsApp para completar seu contato.');
+        
+        // Reset form
+        whatsappForm.reset();
+    });
 
-        // Add loading animation to buttons
-        document.querySelectorAll('.cta-button').forEach(button => {
-            button.addEventListener('click', function(e) {
-                if (this.getAttribute('href').startsWith('#')) {
-                    return; // Allow normal navigation for internal links
-                }
-                
-                e.preventDefault();
-                const originalText = this.innerHTML;
-                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Carregando...';
-                
-                setTimeout(() => {
-                    this.innerHTML = originalText;
-                    // Here you would typically redirect to WhatsApp or contact form
-                }, 1500);
-            });
-        });
-
-        // Add fade-in animation for elements as they come into view
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all feature cards and price cards
-        document.querySelectorAll('.feature-card, .price-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
-        });
+    // Phone number validation
+    const phoneInput = document.getElementById('phone');
+    phoneInput.addEventListener('input', function() {
+        // Remove any non-digit characters
+        this.value = this.value.replace(/[^\d+]/g, '');
+        
+        // Ensure it starts with +258 if not already
+        if (!this.value.startsWith('+258') && this.value.length > 0) {
+            this.value = '+258' + this.value.replace(/^\+?258?/, '');
+        }
+    });
     </script>
 </body>
 </html>
