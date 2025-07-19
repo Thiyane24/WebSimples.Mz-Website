@@ -1,132 +1,71 @@
-Here are two professional `README.md` files for your repository in both English and Portuguese:
+🚀 WebSimples.Mz - Professional Website Solutions
+Premium web development services for Mozambican businesses
 
----
+Copyright © 2025 Thiyane Xavier
+All Rights Reserved - Proprietary Software
 
-### **English Version** (`README.md`)
+🌟 Project Overview
+WebSimples.Mz represents my professional web development offering, delivering:
 
-```markdown
-# WebSimples.Mz - Professional Landing Pages for Mozambican Businesses
+🏢 Tailored business websites for Mozambican enterprises
 
-![WebSimples.Mz Logo](https://via.placeholder.com/150x50?text=WebSimples.Mz)
+🎨 Custom design solutions that reflect local identity
 
-A high-performance website template specialized in creating conversion-optimized landing pages for small and medium businesses in Mozambique.
+⚡ High-performance digital presence
 
-## 🚀 Features
+This repository contains proprietary code and is not open for public contribution.
 
-- **Blazing Fast**: 95+ Lighthouse score
-- **Mobile-First**: Perfectly responsive design
-- **Localized**: Optimized for Mozambican market
-- **Conversion Tools**: WhatsApp integration, contact forms
-- **Easy to Deploy**: Static HTML/CSS/JS
+🔒 License & Usage
+Important Notice
+This project and all associated code is:
 
-## 🛠️ Technologies Used
+📛 Not open source
 
-- HTML5 (semantic markup)
-- CSS3 (Flexbox/Grid)
-- JavaScript (ES6+)
-- [Font Awesome](https://fontawesome.com/) (icons)
-- [Google Fonts](https://fonts.google.com/) (typography)
+🛑 Not available for public use
 
-## 📦 Installation
+💼 My professional intellectual property
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Thiyane24/WebSimples.Mz-Website.git
-   ```
-2. Navigate to project directory:
-   ```bash
-   cd WebSimples.Mz-Website
-   ```
+Unauthorized use, distribution, or modification is strictly prohibited.
 
-## 📊 Performance
+🛠️ Technical Showcase
+While the codebase is private, I'm proud of the technologies powering this solution:
 
-| Metric          | Score |
-|-----------------|-------|
-| Load Time       | 1.2s  |
-| Mobile Score    | 98/100|
-| Desktop Score   | 100/100|
+<div style="display: flex; gap: 10px; flex-wrap: wrap;"> <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"> <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS"> </div>
+✨ Service Highlights
+For Clients
+🌐 Custom website development
 
-## 🤝 Contributing
+📱 Mobile-optimized designs
 
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+🔍 SEO strategy implementation
 
-## 📄 License
+🛠️ Ongoing maintenance packages
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Business Value
+⏱️ Reduced development time with optimized workflows
 
-## 📬 Contact
+📈 Proven templates that convert visitors
 
-Thiyane - [@websimples.mz](https://instagram.com/websimples.mz) -  thiyane97@gmail.com - +258 872622721
+🇲🇿 Localized solutions for Mozambican market
 
-Project Link: [https://github.com/Thiyane24/WebSimples.Mz-Website](https://github.com/Thiyane24/WebSimples.Mz-Website)
-```
+💼 Professional Inquiries
+For business inquiries or service requests:
 
----
+📧 Email: websimples.mz@gmail.com
+🔗 Portfolio: https://Thiyane24.github.io/My-Portfolio/
+📞 Phone: +258 843334793 / +25882622721
 
-### **Portuguese Version** (`README.pt.md`)
+📌 Important Notice
+This repository exists as:
 
-```markdown
-# WebSimples.Mz - Landing Pages Profissionais para Moçambique
+A code showcase for potential clients
 
-![WebSimples.Mz Logo](https://via.placeholder.com/150x50?text=WebSimples.Mz)
+A reference for my development capabilities
 
-Template de website de alto desempenho especializado na criação de landing pages otimizadas para conversão de pequenos e médios negócios em Moçambique.
+A demonstration of my technical approach
 
-## 🚀 Funcionalidades
+No license is granted to use, copy, or modify any portion of this code.
 
-- **Ultra Rápido**: 95+ no Lighthouse
-- **Mobile-First**: Design perfeitamente responsivo
-- **Localizado**: Otimizado para o mercado moçambicano
-- **Ferramentas de Conversão**: Integração com WhatsApp, formulários
-- **Fácil Implementação**: HTML/CSS/JS estático
+⭐ Interested in my services? Please contact me through professional channels.
 
-## 🛠️ Tecnologias Utilizadas
-
-- HTML5 (marcação semântica)
-- CSS3 (Flexbox/Grid)
-- JavaScript (ES6+)
-- [Font Awesome](https://fontawesome.com/) (ícones)
-- [Google Fonts](https://fonts.google.com/) (tipografia)
-
-## 📦 Instalação
-
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/Thiyane24/WebSimples.Mz-Website.git
-   ```
-2. Acesse a pasta do projeto:
-   ```bash
-   cd WebSimples.Mz-Website
-   ```
-
-## 📊 Desempenho
-
-| Métrica         | Pontuação |
-|-----------------|-----------|
-| Tempo de Carregamento | 1.2s  |
-| Mobile          | 98/100    |
-| Desktop         | 100/100   |
-
-## 🤝 Como Contribuir
-
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/FeatureIncrivel`)
-3. Commit suas mudanças (`git commit -m 'Adiciona uma feature incrível'`)
-4. Push para a branch (`git push origin feature/FeatureIncrivel`)
-5. Abra um Pull Request
-
-## 📄 Licença
-
-Distribuído sob licença MIT. Veja `LICENSE` para mais informações.
-
-## 📬 Contato
-
-Thiyane - [@websimples.mz](https://instagram.com/websimples.mz) - thiyane97@gmail.com - +258 872622721
-
-Link do Projeto: [https://github.com/Thiyane24/WebSimples.Mz-Website](https://github.com/Thiyane24/WebSimples.Mz-Website)
-```
-
+Professional solutions for Mozambique's digital growth.
